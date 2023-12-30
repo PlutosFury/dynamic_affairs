@@ -3389,11 +3389,824 @@ def define_cum_events_mf(es: EventMap):
                ))
 
 
+def define_sex_events_mm(es: EventMap):
+    es.add(Sex(EventsSex.MM_WHIP_TEASE, "Whip Tease",
+               stam_cost_1=0, stam_cost_2=1,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=5 / 5,
+               partner_removes_clothes=True,
+               animation_left=IDLE, animation_right=PERSONALITY_CONTENT,
+               desc=f"""
+               With a malevolent smirk at {THEM}, you eye the sizable bulge in their clothing.  
+               Pulling a length of your clothing off, you whip it against his covered erection and he stumbles, gasping in pain and pleasure.
+               \\n\\n
+               Tracing your fingers against his trouser and over his belt, you pull his staff free. It hangs in the brisk air.""",
+               options=(
+                   Option(EventsSex.MM_HANDJOB, OptionCategory.DOM,
+                          "Whip him off",
+                          transition_text="You run the length of clothing against his shaft, building a rhythm as he gasps.",
+                          failed_transition_text="You're too aroused to be satisfied with just teasing."),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.SUB,
+                          "Kneel down and take him in your mouth",
+                          transition_text=f"""
+                          Looking up, anticipation fills {THEM}'s face.
+                          They move a hand to cup your cheek, but you swat it away."""),
+               )))
+    es.add(Sex(EventsSex.MM_FOOTJOB_TEASE, "Footjob Tease",
+               stam_cost_1=0, stam_cost_2=1,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=5 / 5,
+               partner_removes_clothes=True,
+               animation_left=IDLE, animation_right=PERSONALITY_CONTENT,
+               desc=f"""
+               With a heady rush you notice {THEM} has a sizable erection in their clothing.  
+               Sliding closer to him, you viciously knee him in the groin. He stumbles and lands on his back, gasping in pain.  
+               \\n\\n
+               You daintily remove your shoes, and whisper your commands to him.
+               Tracing your feet against his trouser, you pull his staff free. It presses against your feet, ticking them in the brisk air.
+               """,
+               options=(
+                   Option(EventsSex.MM_FOOTJOB, OptionCategory.DOM,
+                          "Rub him off",
+                          transition_text="You rub his thickness between your feet, watching as he flushes and moans.",
+                          failed_transition_text="You're too aroused to be satisfied with just teasing."),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.SUB,
+                          "Kneel down and take him in your mouth",
+                          transition_text=f"""
+                          Looking up, anticipation fills {THEM}'s face.
+                          He moves to rise, but you drive him back down."""),
+               )))
+    es.add(Sex(EventsSex.MM_FOOTJOB, "Footjob",
+               stam_cost_1=0, stam_cost_2=1,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=5 / 5,
+               partner_removes_clothes=True,
+               animation_left=IDLE, animation_right=PERSONALITY_CONTENT,
+               desc=f"""
+               Lying on your back, with one foot, you press his member against his chest and rub it up and down.
+               You explore his face with your other foot, where he takes the liberty of licking and worshipping it
+               when possible.
+               \\n\\n
+               You alternate between this and firmly grasping his member between the soles of your feet, sliding
+               it along your arches.
+               """,
+               options=(
+                   Option(EventsSex.MM_FOOTJOB, OptionCategory.DOM,
+                          "Continue rubbing him off",
+                          transition_text="Your continue building a rhythm going up and down his shaft with your feet",
+                          failed_transition_text="You're too aroused to be satisfied with playing with your feet"),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.SUB,
+                          "Kneel down and take him in your mouth",
+                          transition_text=f"""You sit up and replace your feet with your more dexterous hands."""),
+                   Option(EventsCum.MM_RUINED_ORGASM, OptionCategory.DOM,
+                          "Deny his release",
+                          dom_success_adjustment=-20,
+                          transition_text=f"""
+                              Just as {THEM}'s body hints at his impending climax, you stop your minstrations with your
+                              feet and instead stomp on his member, reminding him who's in charge.
+                              """,
+                          failed_transition_text=f"""
+                              You move to stop his climax, but realize that he did not last as long as you expected."""),
+                   Option(EventsCum.MM_CUM_ON_FOOT, OptionCategory.SUB,
+                          "Let him cum on your feet",
+                          transition_text=f"""
+                              From the twitching of {THEM}'s member, and the arching of his back, you can tell he's 
+                              about to cum. You bring both your feet together and place them under his member, 
+                              presenting your toes as a target. 
+                              """,
+                          )
+               )))
+    es.add(Sex(EventsSex.MM_HANDJOB_TEASE, "Handjob Tease",
+               stam_cost_1=0, stam_cost_2=1,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=5 / 5,
+               partner_removes_clothes=True,
+               animation_left=IDLE, animation_right=PERSONALITY_CONTENT,
+               desc=f"""
+               With a knowing smirk at {THEM}, you put your hands on their chest. 
+               Leveraging your weight, you pin him against a wall and slide a knee up his leg. His face reddens as you press against his bulge. 
+               \\n\\n
+               Tracing your fingers against thin fabric, you work your way to his trouser and pull his staff free. It twitches at sensations of the brisk air and your warm hands.""",
+               options=(
+                   Option(EventsSex.MM_HANDJOB, OptionCategory.DOM,
+                          "Jerk him off",
+                          transition_text="Your continue building a rhythm going up and down his shaft with your hands.",
+                          failed_transition_text="You're too turned on to be satisfied with just jerking him off."),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.SUB,
+                          "Kneel down and take him in your mouth",
+                          transition_text=f"""
+                          Looking up, anticipation fills {THEM}'s face.
+                          They move a hand to place behind your head, but you swat it away."""),
+               )))
+    es.add(Sex(EventsSex.MM_HANDJOB, "Handjob",
+               stam_cost_1=-0.5, stam_cost_2=1,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=5 / 5,
+               partner_removes_clothes=True,
+               desc=f"""
+                   {THEM}'s eyes are closed and you delight in your control of his pleasure.
+                   A thrill fills you at the pleasure on his face.""",
+               options=(
+                   Option(EventsSex.MM_HANDJOB, OptionCategory.DOM,
+                          "Continue jerking him off",
+                          transition_text=f"""
+                              Under the interminable strokes, {THEM}'s cock hardens.
+                              Dew-like pre-cum dribbles from the tip, lubricating the whole shaft.""",
+                          failed_transition_text=
+                          ComposedDesc(
+                              TriggeredDesc(f"{NOT} = {{ {IS_AT_LEAST_DOM_1} }}", """
+                                 You're too turned on to be satisfied with just jerking him off!"""),
+                              TriggeredDesc(IS_AT_LEAST_DOM_1, f"""
+                                  {THEM} wants more than you teasing him, so he #sub takes#! something #italic wetter#!."""),
+                              "."
+                          ),
+                          ),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.SUB,
+                          "Kneel down and take him in your mouth",
+                          transition_text=f"""You get on your knees, taking him in your mouth."""),
+                   Option(EventsCum.MM_RUINED_ORGASM, OptionCategory.DOM,
+                          "Deny his release",
+                          transition_text=f"""
+                              You abruptly stop your jerking motion and slap his cock, 
+                              disrupting the build up to his climax.""",
+                          failed_transition_text=f"""
+                              You move to stop his climax, but realize that he did not last as long as you expected."""),
+                   Option(EventsCum.MM_HANDJOB_CUM_IN_HAND, OptionCategory.DOM,
+                          "Milk him into your soft palms",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              You place your palm below his cock, ready to receive his seed.""",
+                          failed_transition_text=f"""
+                              You place your palm below his cock, ready to receive his seed,
+                              but his tip seems to be pointing elsewhere...""",
+                          ),
+                   Option(EventsCum.MM_BLOWJOB_CUM_ON_FACE, OptionCategory.SUB,
+                          "Make him coat your face in cum",
+                          transition_text=f"""
+                              You pull away and look up, preparing for him to mark your face.""",
+                          ),
+               )))
+    es.add(Sex(EventsSex.MM_BLOWJOB_DOM, "Dom Blowjob",
+               stam_cost_1=0.5, stam_cost_2=2,
+               root_gender=MALE, partner_gender=MALE,
+               partner_removes_clothes=True,
+               animation_left=KNEEL_RULER_3,
+               desc=f"""
+                   You tease his shaft with your tongue, leaving him yearning for your mouth's full commitment.
+                   In this position of power and control over his pleasure, you deny him any movement with his hands.""",
+               options=(
+                   Option(EventsSex.MM_HANDJOB, OptionCategory.DOM,
+                          "Deny him your mouth, replacing it with your hands",
+                          weight=5,
+                          transition_text=f"""
+                              You give {THEM}'s head a last lick, making sure to drag it out as if expressing your tongue's
+                              reluctance to part from it. You replace the warmth of your mouth with the milder warmth of
+                              your palms, and the bobbing of your head with the strokes from your hands.
+                              """,
+                          failed_transition_text=f"""
+                              The potent musk of his member, inflated by the proximity of your 
+                              nose to his groin, strangely captivates you and you lose this opportunity to assert more 
+                              dominance."""),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.DOM,
+                          "Continue milking his cock with your lips and tongue",
+                          transition_text=f"""
+                              You continue to bob your head back and forth, occasionally glancing up and making adjustments
+                              based on their expression. The fact that you have total control over {THEM}'s pleasure makes
+                              you excited.""",
+                          failed_transition_text=f"""
+                              The incessant invasion of his member down your throat
+                              momentarily puts you in a trance, leaving the initiative in his hands.""",
+                          subdom_dom_success=0),
+                   Option(EventsSex.MM_BLOWJOB_SUB, OptionCategory.SUB,
+                          "Let him do the work of thrusting in and out of your mouth",
+                          transition_text=f"""
+                              Your jaw and neck sore from doing all the work, you decide to let him
+                              do pick up the slack. "Come on {THEM}, show me your mettle."
+                              \\n\\n
+                              Instead of wasting words, he places both hands behind your head and starts thrusting."""),
+                   Option(EventsSex.MM_STANDING_FUCKED_FROM_BEHIND, OptionCategory.SUB,
+                          "Give his member a #better#! hole",
+                          transition_text=ComposedDesc(
+                              TriggeredDesc(f"{NOT} = {{ {IS_AT_LEAST_DOM_1} }}", """
+                               You're too turned to just suck him off! You turn around and bend over, making him an offer he #S can't#! refuse."""),
+                              TriggeredDesc(IS_AT_LEAST_DOM_1, f"""
+                               "Your mouth just isn't enough!" he says as he turns you around and grabs your arms."""),
+                              "."
+                          ),
+                          ),
+                   # TODO make these options more likely if you are addicted to cum
+                   Option(EventsCum.MM_RUINED_ORGASM, OptionCategory.DOM,
+                          "Cruelly deny him his release",
+                          transition_text=f"""
+                              You pull back and slap his rod, disrupting the build up to his climax.""",
+                          failed_transition_text=f"""
+                              As you try to pull back, he holds the back of your head with his hands."""),
+                   Option(EventsCum.MM_BLOWJOB_CUM_IN_MOUTH_DOM, OptionCategory.SUB,
+                          "Milk him dry onto your tongue",
+                          transition_text=f"""
+                              You prepare to wring him dry with your dexterous tongue."""),
+                   Option(EventsCum.MM_BLOWJOB_CUM_ON_FACE, OptionCategory.SUB,
+                          "Make him coat your face in cum",
+                          transition_text=f"""
+                              You pull away and look up, preparing for him to mark your face."""),
+               )))
+    # TODO define these repeated events
+    es.add(RepeatedSex(EventsSex.MM_BLOWJOB_DOM_I, "Dom Blowjob I", base_event=es.sex(EventsSex.FM_BLOWJOB_DOM),
+                       root_become_more_dom_xp=5 / 5,
+                       desc=f"""
+                       placeholder""",
+                       options=(
+                           Option(EventsSex.MM_BLOWJOB_DOM_II, OptionCategory.DOM,
+                                  "Continue milking his cock with your lips and tongue",
+                                  transition_text=f"""
+                              You continue to bob your head back and forth, occasionally glancing up and making adjustments
+                              based on their expression. The fact that you have total control over {THEM}'s pleasure makes
+                              you excited.""",
+                                  failed_transition_text=f"""
+                              The incessant invasion of his member down your throat
+                              momentarily puts you in a trance, leaving the initiative in his hands.""",
+                                  ),
+                       )))
+    es.add(RepeatedSex(EventsSex.MM_BLOWJOB_DOM_II, "Dom Blowjob II", base_event=es.sex(EventsSex.FM_BLOWJOB_DOM_I),
+                       root_become_more_dom_xp=5 / 5,
+                       desc=f"""
+                       placeholder""",
+                       options=(
+                           Option(EventsSex.MM_BLOWJOB_DOM_II, OptionCategory.DOM,
+                                  "Continue milking his cock with your lips and tongue",
+                                  transition_text=f"""
+                              You continue to bob your head back and forth, occasionally glancing up and making adjustments
+                              based on their expression. The fact that you have total control over {THEM}'s pleasure makes
+                              you excited.""",
+                                  failed_transition_text=f"""
+                              The incessant invasion of his member down your throat
+                              momentarily puts you in a trance, leaving the initiative in his hands.""",
+                                  ),
+                       )))
+    es.add(Sex(EventsSex.MM_BLOWJOB_SUB, "Sub Blowjob",
+               stam_cost_1=1.0, stam_cost_2=1.5,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_sub_xp=5 / 5,
+               partner_removes_clothes=True,
+               animation_left=KNEEL_RULER_3,
+               desc=f"""
+                   With your tongue out, your mouth receives {THEM}'s rhythmic thrusts. His hands behind
+                   your head prevent you from instinctively pulling away, making you feel self conscious about
+                   being kept captive in a compromising position.""",
+               options=(
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.DOM,
+                          "Take back control and be the active one giving the blowjob",
+                          transition_text=f"""
+                              Putting both hands on his waist, you curb his thrusts. 
+                              {THEM} moves his arms as if to protest, but your licks along his shaft
+                              resolve any nascent objections.""",
+                          failed_transition_text=f"""
+                              Putting both hands on his waist, you attempt to curb his thrusts.
+                              However, on your knees beneath him, you don't have enough leverage to forcefully
+                              stop him and he seems to have no intention of letting you back in control.
+                              """),
+                   Option(EventsSex.MM_BLOWJOB_SUB, OptionCategory.SUB,
+                          "Let him continue his thrusts",
+                          transition_text=f"""
+                              You adjust your posture better suit his thrusts, making sure to pull away your teeth."""),
+                   Option(EventsSex.MM_DEEPTHROAT, OptionCategory.SUB,
+                          "Let him thrust even deeper",
+                          transition_text=f"""
+                              He takes advantage of your lack of strong resistance to dominate your mouth
+                              further. Trapping your head with his hands, he plunges deeper while you gag."""),
+                   Option(EventsCum.MM_HANDJOB_CUM_IN_HAND, OptionCategory.DOM,
+                          "Finish him off on your hand",
+                          transition_text=f"""
+                              Pulling away, you deprive him of the warmth of your mouth.""",
+                          failed_transition_text=f"""
+                              Try as you might, {THEM} grips your hair harshly and prevents you from pulling away."""),
+                   Option(EventsCum.MM_BLOWJOB_CUM_IN_MOUTH_SUB, OptionCategory.SUB,
+                          "Let him cum in your mouth",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              Like a good bot you don't resist when he plunges into your mouth to deposit his seed."""),
+                   Option(EventsCum.MM_BLOWJOB_CUM_ON_FACE, OptionCategory.SUB,
+                          "Make him coat your face in cum",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              You instinctually squeeze your eyes shut when he pulls out and aims his rod at your face."""),
+               )))
+    es.add(Sex(EventsSex.MM_DEEPTHROAT, "Deepthroat",
+               stam_cost_1=1.0, stam_cost_2=2.0,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_sub_xp=10 / 5,
+               partner_removes_clothes=True,
+               animation_left=KNEEL_2,
+               desc=ComposedDesc("""
+                   Your eyes tear up as he thrusts deeply and relentlessly. The degrading way in which he
+                   gives not care about your well-being or pleasure leaves a deep impression on you.""",
+                                 TriggeredDesc(f"{NOT} = {{ {IS_AT_LEAST_SUB_1} }}", """
+                   In a dark part of your mind, though you may not admit it, you enjoy being used like
+                   a cheap toy."""),
+                                 TriggeredDesc(IS_AT_LEAST_SUB_1, """
+                   You enjoy being used like a cheap toy, reinforcing your submissive nature."""),
+                                 ),
+               options=(
+                   Option(EventsSex.MM_BLOWJOB_SUB, OptionCategory.DOM,
+                          "Take some control back",
+                          transition_text=f"""
+                              Putting both hands on his waist, you reduce his thrusts to a manageable pace and depth. 
+                              """,
+                          failed_transition_text=f"""
+                              Putting both hands on his waist, you push and try to stop his thrusts.
+                              It's all in vain, however, as he ignores you.
+                              """),
+                   Option(EventsSex.MM_DEEPTHROAT, OptionCategory.SUB,
+                          "Continue deepthroating",
+                          transition_text=f"""
+                              He continues fucking your throat while 
+                              your vision blurs against a mixture of tears, saliva, and sex juices."""),
+                   Option(EventsCum.MM_BLOWJOB_CUM_IN_MOUTH_SUB, OptionCategory.SUB,
+                          "He cums in your mouth",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              You don't have any say in it, or in anything else at the moment, as his mass
+                              fills your throat."""),
+               )))
+    es.add(Sex(EventsSex.MM_ASS_TEASE, "Ass Tease",
+               stam_cost_1=0.5, stam_cost_2=0.75,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=5 / 5,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               desc=f"""
+                   Looking into {THEM}'s leering eyes, you can see his desire to have you.
+                   You may not let them have their way with you, but for now you play along.
+                   Closing in, you lean close to his ear and promise, "This will be a day you'll remember."
+                   \\n\\n
+                   Simultaneously, you reach down and loosen his trousers. His member springs to attention,
+                   clearly incensed from your wiles and seductive manner. In reciprocation, he pulls
+                   down your pants, and you turn around, teasingly shake your shapely behind and giving his eyes
+                   a treat. You continue shaking while backing up until his cock is gripped by your cheeks.
+                   """,
+               options=(
+                   Option(EventsSex.MM_ASS_RUB, OptionCategory.DOM,
+                          "Continue teasing him with your ass",
+                          transition_text=f"""
+                              You continue to rub his rod in between your buns. You can feel a sticky coolness
+                              from {THEM}'s tip, slicking up your back. The contrast with the rhythmic thrusts from his 
+                              hot member makes this an interesting experience.""",
+                          failed_transition_text="You have better uses for that hard cock than just teasing it."),
+                   Option(EventsSex.MM_HANDJOB, OptionCategory.DOM,
+                          "Wrap your fingers around his member and start jerking",
+                          transition_text=f"""
+                              Feeling a change of pace, you switch to using your hand to get him off.""",
+                          failed_transition_text=f"""
+                              He recognizes what you are trying to do and twists his body to avoid having his member
+                              fully trapped within your fingers."""),
+                   Option(EventsSex.MM_HOTDOG, OptionCategory.SUB,
+                          "Relax and let him do the thrusting along your crack",
+                          transition_text=f"""
+                              {THEM} wastes no time after you slow down to pick up the pace, his rod now doing the
+                              thrusting along your crack."""),
+                   Option(EventsCum.MM_ASS_TEASE_CUM_ON_ASS, OptionCategory.DOM,
+                          "Have him cum on your cheeks",
+                          transition_text=f"""
+                              You manage to guide his stream onto your cheeks.""",
+                          failed_transition_text=f"""
+                              You try to guide his stream onto your cheeks, but he is cumming too hard to control"""),
+                   Option(EventsCum.MM_CUM_ON_GROIN, OptionCategory.SUB,
+                          "Let him cum all over on your groin",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              You feel his dick twitch between your cheeks, alerting you of his impending climax.""")
+               )))
+    es.add(Sex(EventsSex.MM_ASS_RUB, "Ass Rub",
+               stam_cost_1=0.5, stam_cost_2=0.75,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=5 / 5,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               desc=f"""
+                   Despite not being able to see him standing behind you, 
+                   you feel a sense of control as you rub his cock and control his pleasure with your ass.
+                   """,
+               options=(
+                   Option(EventsSex.MM_ASS_RUB, OptionCategory.DOM,
+                          "Continue teasing him with your ass",
+                          transition_text=f"""
+                              You continue to rub his rod in between your buns. You can feel a sticky coolness
+                              from {THEM}'s tip, slicking up your back. The contrast with the rhythmic thrusts from his 
+                              hot member makes this an interesting experience.""",
+                          failed_transition_text="You have better uses for that hard cock than just teasing it"),
+                   Option(EventsSex.MM_HANDJOB, OptionCategory.DOM,
+                          "Wrap your fingers around his member and start jerking",
+                          transition_text=f"""
+                              Feeling a change of pace, you switch to using your hand to get him off.""",
+                          failed_transition_text=f"""
+                              He recognizes what you are trying to do and twists his body to avoid having his member
+                              fully trapped within your fingers."""),
+                   Option(EventsSex.MM_HOTDOG, OptionCategory.SUB,
+                          "Relax and let him do the thrusting along your crack",
+                          transition_text=f"""
+                              {THEM} wastes no time after you slow down to pick up the pace, his rod now doing the
+                              thrusting along your crack."""),
+                   Option(EventsCum.MM_ASS_TEASE_CUM_ON_ASS, OptionCategory.DOM,
+                          "Have him cum on your cheeks",
+                          transition_text=f"""
+                              You manage to guide his stream onto your cheeks.""",
+                          failed_transition_text=f"""
+                              You try to guide his stream onto your cheeks, but he is cumming too hard to control"""),
+                   Option(EventsCum.MM_CUM_ON_GROIN, OptionCategory.SUB,
+                          "Let him cum all over your groin",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              You feel his dick twitch between your cheeks, alerting you of his impending climax.""")
+               )))
+    es.add(Sex(EventsSex.MM_HOTDOG, "Get Hotdogged",
+               stam_cost_1=0.5, stam_cost_2=0.75,
+               root_gender=FEMALE, partner_gender=MALE,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               desc=f"""
+                   You lay back and relax as his cock repeatedly parts your cheeks. He holds your arms
+                   to keep you from sliding away during his thrusts, which you allow.
+                   """,
+               options=(
+                   Option(EventsSex.MM_ASS_RUB, OptionCategory.DOM,
+                          "Resume active rubbing to take back some control",
+                          transition_text=f"""
+                              Having rested a bit by letting him do the thrusting, you restart your own
+                              bounce to better control his pleasure.""",
+                          failed_transition_text=f"""
+                              Having tasted a bit of control, he has no intention of relenting and giving it back to you.
+                              """),
+                   Option(EventsSex.MM_HOTDOG, OptionCategory.DOM,
+                          "Continue to get him off with your ass",
+                          dom_success_adjustment=10,
+                          transition_text=f"""
+                              You enjoy the sensation of controlling his pleasure with just your butt, without having
+                              to resort to any penetration.""",
+                          failed_transition_text=f"""
+                              Your thoughts are occupied by his vigorous thrusts, and you can't help but wonder what it 
+                              would feel like to him thrust inside you."""),
+                   Option(EventsSex.MM_REVERSE_COWGIRL, OptionCategory.DOM,
+                          "Get on top and ride him facing away",
+                          dom_success_adjustment=10,
+                          transition_text=f"""
+                              You push your groin backwards, forcing him to the ground as you get his rod inside you.""",
+                          failed_transition_text=f"""
+                              You try to force him to the ground, but as you push your groin backwards something
+                               #italic enters#! you and {THEM} wraps an arm around your chest, holding you in place."""),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.DOM,
+                          "Switch to using your mouth",
+                          dom_success_adjustment=10,
+                          transition_text=f"""
+                              His vigorous thrusts invade your mind and you can't help but wonder what it would feel like
+                              inside of you. You satisfying this curiosity by offering your mouth.""",
+                          failed_transition_text=f"""
+                              His vigorous thrusts invade your mind and you can't help but wonder what it would feel like
+                              inside of you. You won't be satisfied with just him inside your mouth.
+                              """),
+                   Option(EventsSex.MM_STANDING_FINGERED_FROM_BEHIND, OptionCategory.SUB,
+                          "Let him use his fingers",
+                          transition_text=f"""
+                              As if his earlier thrusting along your ass crack was in preparation, he plunges his fingers
+                              into your tigh holes, with only a moan as a weak protest from you."""),
+                   Option(EventsSex.MM_STANDING_FUCKED_FROM_BEHIND, OptionCategory.SUB,
+                          "Get impaled from behind",
+                          transition_text=f"""
+                              One of his thrusts, instead of going up, goes in between your thighs, stroking past your cock. 
+                              causing you to moan. Accepting your body's invitation, his next thrust pierces
+                              into you, eliciting a suprise yelp from your lips."""),
+                   Option(EventsCum.MM_ASS_TEASE_CUM_ON_ASS, OptionCategory.DOM,
+                          "Have him cum on your cheeks",
+                          transition_text=f"""
+                              You manage to guide his stream onto your cheeks.""",
+                          failed_transition_text=f"""
+                              You try to guide his stream onto your cheeks, but he is climaxing too hard to control"""),
+                   Option(EventsCum.MM_CUM_ON_GROIN, OptionCategory.SUB,
+                          "Let him cum all over your groin",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              You feel his dick twitch between your cheeks, alerting you of his impending climax.""")
+               )))
+    es.add(Sex(EventsSex.MM_STANDING_FINGERED_FROM_BEHIND, "Fingered from Behind",
+               stam_cost_1=1, stam_cost_2=-0.5,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_sub_xp=5 / 5,
+               root_removes_clothes=True,
+               animation_right=SCHADENFREUDE,
+               desc=f"""
+                   His finger drive in past tight muscles causing heated moans
+                    to fall from your mouth. Your head leans back, giving him the liberty
+                   of entwining his tongue with yours.""",
+               options=(
+                   Option(EventsSex.MM_HOTDOG, OptionCategory.DOM,
+                          "Pull out to recover from his thrusting",
+                          transition_text=f"""
+                              You pull away from his devious fingers to get a chance to recover.
+                              They accept it, for now, and resume thrusting between your buns.""",
+                          failed_transition_text=f"""
+                              You try to pull away from his devious fingers, but your endeavour is stopped
+                              by a particularly deep thrust scraping your inner walls."""),
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.DOM,
+                          "Satisfy him with your mouth",
+                          dom_success_adjustment=5,
+                          transition_text=f"""
+                              Giving him something else to thrust into, you get on your knees and starting sucking.""",
+                          failed_transition_text=f"""
+                              You move to pull away from his fingers, but are stopped
+                              by a particularly #bold deep#! thrust scraping your inner walls."""),
+                   Option(EventsSex.MM_STANDING_FINGERED_FROM_BEHIND, OptionCategory.SUB,
+                          "Continue enjoying his deft hands",
+                          transition_text=f"""
+                              You melt into his hands as you surrender to pleasure."""),
+                   Option(EventsSex.MM_STANDING_FUCKED_FROM_BEHIND, OptionCategory.SUB,
+                          "Let him fuck you proper",
+                          transition_text=f"""
+                              Surrendering to pleasure and wanting more, you involuntarily push your groin backwards, but find
+                               #italic something else#! at your entrance. Welcoming the invitation, he plunges into you fully."""),
+                   Option(EventsCum.MM_ASS_TEASE_CUM_ON_ASS, OptionCategory.DOM,
+                          "Have him cum on your cheeks",
+                          transition_text=f"""
+                              You manage to guide his stream onto your cheeks.""",
+                          failed_transition_text=f"""
+                              You try to guide his stream onto your cheeks, but he is climaxing too hard to control"""),
+                   Option(EventsCum.MM_CUM_ON_GROIN, OptionCategory.SUB,
+                          "Let him cum all over your groin",
+                          subdom_sub=0,
+                          transition_text=f"""
+                              You feel his dick twitch against your ass, alerting you of his impending climax.""")
+               )))
+    es.add(Sex(EventsSex.MM_STANDING_FUCKED_FROM_BEHIND, "Standing Fucked from Behind",
+               stam_cost_1=2, stam_cost_2=1.5,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_sub_xp=7 / 5,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               animation_left=BOW_3, animation_right=SCHADENFREUDE,
+               desc=ComposedDesc(f"""
+                   Sometimes bending you over and sometimes #sub pulling#! your hair to keep you upright, 
+                   you're at the mercy of {THEM}. His vigorous thrusts make you knees weak and you find it
+                   hard to stay on your feet.
+                   \\n\\n""",
+                                 TriggeredDesc(f"{SCOPE}:{SUBDOM} <= -20", f"""
+                   "You're my bitch now," he punctuates with a resounding spank on your ass.
+                   """),
+                                 TriggeredDesc(f"{SCOPE}:{SUBDOM} >= 10", f"""
+                   "Is that all?" You manage to get out in between his thrusts, taunting and teasing him.
+                   """),
+                                 ),
+               options=(
+                   Option(EventsSex.MM_BLOWJOB_DOM, OptionCategory.DOM,
+                          "Pleasure him with your mouth instead",
+                          transition_text=f"""
+                              You pull away and recover a bit of control by placing your hands and mouth around
+                              his cock, where you can easily decide what to do with it.""",
+                          failed_transition_text=f"""
+                              You attempt to pull away and recover some control, but his hands grip your hips
+                              stopping you from pull away from this pleasure."""),
+                   Option(EventsSex.MM_BLOWJOB_SUB, OptionCategory.DOM,
+                          "Let him fuck your mouth instead",
+                          dom_success_adjustment=15,
+                          transition_text=f"""
+                              Dropping to your knees, you replace the hole he thrusts into. {THEM} don't seem to mind and
+                              doesn't break their rhythm.""",
+                          failed_transition_text=f"""
+                              You attempt to extricate yourself with gravity's assistance. However, he grabs your arms
+                              and pulls you back, giving you a few sharp thrusts as punishment for trying to escape."""),
+                   Option(EventsSex.MM_STANDING_FUCKED_FROM_BEHIND, OptionCategory.SUB,
+                          "Submit to getting plowed",
+                          transition_text=f"""
+                              You accept his invasion, each thrust making it harder and harder to pull away and form
+                              coherent thoughts. Instead, your mind is filled with a pink haze, urging you to just accept
+                              the pleasure of being used like a piece of meat.
+                              """),
+                   Option(EventsSex.MM_PRONE_BONE, OptionCategory.SUB,
+                          "Submit to getting plowed facing down",
+                          transition_text=f"""
+                              Your legs weaken as you fall to the floor, {THEM} immediately following you down as he 
+                              takes advantage of the opportunity to #sub dominate#! you. You try to prepare yourself for 
+                              the #bold intense#! pounding that you're about to recieve.
+                              """),
+                   Option(EventsCum.MM_PULL_OUT_CUM_ON_ASS, OptionCategory.DOM,
+                          "Have him pull out and cum on your ass",
+                          transition_text=f"""
+                              "Pull it out, {THEM}!", you manage to voice between his wild thrusts and loud groans.""",
+                          failed_transition_text=f"""
+                              "Pull it out, {THEM}!", you manage to voice between his wild thrusts and loud groans, but your pleas falls on deaf ears."""),
+                   Option(EventsCum.MM_CREAMPIE_REGULAR, OptionCategory.SUB,
+                          "Let him fill you with his seed",
+                          transition_text=f"""
+                              You feel {THEM}'s thrusts become sharper and deeper."""),
+               )))
+    es.add(Sex(EventsSex.MM_REVERSE_COWGIRL, "Ride Facing Away",
+               stam_cost_1=3, stam_cost_2=1.5,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=15 / 5,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               desc=ComposedDesc(f"""
+                   You close your eyes as your hips hungrily dance around {THEM}'s shaft, #bold shaking#! with pleasure.
+                   """, TriggeredDesc(IS_AT_LEAST_DOM_1, f"""
+                   Your senses focus on the hard meat in you, using it with precision to scratch itches no man could ever even #dom hope#! to understand.
+                   """), TriggeredDesc(IS_AT_LEAST_SUB_1, f"""
+                   As your senses focus on his hard meat, you can't help but imagine how amazing it would feel to have this rod #sub pounding you!# mercilessly.  
+                   """),
+                                 ),
+               options=(
+                   Option(EventsSex.MM_REVERSE_COWGIRL, OptionCategory.DOM,
+                          "Continue riding him",
+                          transition_text=f"""
+                              You continue riding {THEM} as he is powerlessly lying under you, his rod constantly hitting the insides of your walls.""",
+                          failed_transition_text=f"""
+                              You try to continue riding him, but as you slow down a moment he grabs you arms and pushes your waist forward.
+                              You nearly topple before feeling a burst of pleasure as {THEM}'s cock enters you.
+                              """),
+                   Option(EventsSex.MM_COWGIRL, OptionCategory.DOM,
+                          "Roll around",
+                          transition_text=f"""
+                              You turn around, meeting {THEM}'s gaze as you continue riding him.""",
+                          failed_transition_text=f"""
+                              You try to turn around, but your legs feel weak and {THEM} doesn't miss his opportunity to take the lead and guide your next move.
+                              """),
+                   Option(EventsSex.MM_STANDING_FUCKED_FROM_BEHIND, OptionCategory.SUB,
+                          "Stand up and let him take you from behind",
+                          transition_text=f"""
+                              You stand up, letting him take you however he desires""", ),
+                   Option(EventsSex.MM_PRONE_BONE, OptionCategory.SUB,
+                          "Lie on your belly and let him pound you",
+                          transition_text=f"""
+                              You end up on your belly, readying yourself as {THEM} prepares to pound you.""", ),
+                   Option(EventsCum.MM_PULL_OUT_CUM_ON_ASS, OptionCategory.DOM,
+                          "Make him pull out and cum on your ass",
+                          transition_text=f"""
+                              You put your hand on his rod, guiding him to unload on your cheeks instead""",
+                          failed_transition_text=f"""
+                              You put your hand on his rod, trying to guide him to cum on your cheeks instead, but are suddenly grabbed."""),
+                   Option(EventsCum.MM_CREAMPIE_ON_TOP, OptionCategory.DOM,
+                          "Pin him down and #bold take#! his seed",
+                          transition_text=f"""
+                              Your body tightens as he begins to twitch inside you.""",
+                          failed_transition_text=f"""
+                              Your body tightens as he begins to twitch inside you, but you lose control as he grabs your hips and pulls down on them."""),
+                   Option(EventsCum.MM_CREAMPIE_REGULAR, OptionCategory.SUB,
+                          "Let #bold him#! fill you with his seed",
+                          transition_text=f"""
+                              You feel {THEM}'s thrusts become sharper and deeper."""),
+               )))
+    es.add(Sex(EventsSex.MM_COWGIRL, "Ride Facing Them",
+               stam_cost_1=2.0, stam_cost_2=1,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_dom_xp=10 / 5,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               desc=ComposedDesc(f"""
+                   You look in {THEM}'s eyes as you vigorously ride, his member under your complete control as you focus exclusively on satisfying yourself. \\n
+                   """, TriggeredDesc(IS_AT_LEAST_DOM_1, f"""
+                   He is a tool, his "manhood" nothing more than a meat toy whose #dom only#! purpose is to satisfy your needs. He is a #bold good#! tool.
+                   """), TriggeredDesc(IS_AT_LEAST_SUB_1, f"""
+                   Despite how good this feels you can't help but wish #sub he#! pleasured you instead.  
+                   """),
+                                 ),
+               options=(
+                   Option(EventsSex.MM_COWGIRL, OptionCategory.DOM,
+                          "Continue riding him",
+                          transition_text=f"""
+                              You continue riding {THEM}, his rod madly bouncing from wall to wall inside you as if attempting to escape.""",
+                          failed_transition_text=f"""
+                              You continue riding him, but as you slow down for a moment {THEM} pushes you backwards, trying to get control over you.
+                              """),
+                   Option(EventsSex.MM_REVERSE_COWGIRL, OptionCategory.DOM,
+                          "Roll around",
+                          transition_text=f"""
+                              You turn your back towards {THEM}, treating him as no more than a piece of meat.""",
+                          failed_transition_text=f"""
+                              You begin to turn your back towards him, but your legs feel weak and {THEM} doesn't miss his opportunity to take the lead and guide your next move.
+                              """),
+                   Option(EventsSex.MM_HOTDOG, OptionCategory.SUB,
+                          "Pull out to recover from his thrusting",
+                          dom_success_adjustment=10,
+                          transition_text=f"""
+                              {THEM} twitches backwards, managing to get up, as he escapes from under you.""", ),
+                   Option(EventsSex.MM_MISSIONARY, OptionCategory.SUB,
+                          "Lie on your back and let him pound you",
+                          transition_text=f"""
+                              You end up on your back, readying yourself as {THEM} lifts your legs, making way for his rod.""", ),
+                   Option(EventsCum.MM_PULL_OUT_CUM_ON_ASS, OptionCategory.DOM,
+                          "Make him pull out and cum on your ass",
+                          transition_text=f"""
+                              You put your hand on his rod, guiding him to unload on your cheeks instead""",
+                          failed_transition_text=f"""
+                              You put your hand on his rod, trying to guide him to cum on your cheeks instead, but are suddenly grabbed."""),
+                   Option(EventsCum.MM_CREAMPIE_ON_TOP, OptionCategory.DOM,
+                          "Pin him down and #bold take#! his seed",
+                          transition_text=f"""
+                              Your body tightens as he begins to twitch inside you.""",
+                          failed_transition_text=f"""
+                              Your body tightens as he begins to twitch inside you, but you lose control as he grabs your hips and pulls down on them."""),
+                   Option(EventsCum.MM_CREAMPIE_REGULAR, OptionCategory.SUB,
+                          "Let #bold him#! fill you with his seed",
+                          transition_text=f"""
+                              You feel {THEM}'s thrusts become sharper and deeper."""),
+
+               )))
+    es.add(Sex(EventsSex.MM_MISSIONARY, "Lie on Back",
+               stam_cost_1=2.0, stam_cost_2=1.5,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_sub_xp=10 / 5,
+               animation_left=FLIRTATION_LEFT, animation_right=FLIRTATION_LEFT,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               desc=ComposedDesc(f"""
+                   You lie there, legs straddling his shoulders, each of {THEM}'s vigorous thrusts slapping loudly against your cheeks as
+                   waves of pleasure course through your core. You have nearly no control over your body
+                   """,
+                                 TriggeredDesc(IS_AT_LEAST_SUB_1, """
+                    and you wish you had even #sub less#!"""),
+                                 TriggeredDesc(IS_AT_LEAST_DOM_1, """
+                    and you #dom hate#! that it feels this good"""), "."
+                                 ),
+               options=(
+                   Option(EventsSex.MM_COWGIRL, OptionCategory.DOM,
+                          "Roll with him and get on top",
+                          transition_text=f"""
+                              You unbalance {THEM} as he's recovering from a thrust and push him sideways with all your strength, landing on top of him.""",
+                          failed_transition_text=f"""
+                              You unbalance {THEM} as he's recovering from a thrust and manage to get on your side, but he grabs and forces you back down.
+                              """),
+                   Option(EventsSex.MM_MISSIONARY, OptionCategory.SUB,
+                          "Keep your legs up",
+                          transition_text=f"""
+                              You keep your legs up, letting {THEM} continue nailing you from above."""),
+                   Option(EventsSex.MM_PRONE_BONE, OptionCategory.SUB,
+                          "Roll in place, submitting completely",
+                          transition_text=f"""
+                              You find yourself rolled onto your belly, your opening at {THEM}'s mercy."""),
+                   Option(EventsCum.MM_PULL_OUT_CUM_ON_ASS, OptionCategory.DOM,
+                          "Have him pull out and cum on your ass",
+                          transition_text=f"""
+                              "Not inside!" you barely blurt out between moans and labored breaths.""",
+                          failed_transition_text=f"""
+                              "Not inside!" you barely blurt out between moans and labored breaths, but your pleas falls on deaf ears."""),
+                   Option(EventsCum.MM_CREAMPIE_KEEP, OptionCategory.DOM,
+                          "Hold him inside while he's cumming",
+                          transition_text=f"""
+                              You wrap your legs and arms around him...""",
+                          failed_transition_text=f"""
+                              You try to wrap your legs and arms around him, but his wild thrusting makes it impossible to hold on."""),
+                   Option(EventsCum.MM_CREAMPIE_BREED, OptionCategory.SUB,
+                          "Get #italic filled to the brim#!",
+                          transition_text=f"""
+                              His rod gets even harder as his relentless pounding reaches your deepest spot, #bold drowning#! your thoughts in euphoria."""
+                                          ""),
+               )))
+    es.add(Sex(EventsSex.MM_PRONE_BONE, "Lie Face Down",
+               stam_cost_1=3.5, stam_cost_2=2.5,
+               root_gender=MALE, partner_gender=MALE,
+               root_become_more_sub_xp=15 / 5,
+               animation_left=FLIRTATION_LEFT, animation_right=FLIRTATION_LEFT,
+               root_removes_clothes=True, partner_removes_clothes=True,
+               desc=ComposedDesc(f"""
+                   You are face down with your legs closed while {THEM} thrusts deep in your tight heat, your mind melting from the echoing sound of
+                   #bold your cheeks getting clapped#! as each #italic ravaging#! stroke sends #sub paralyzing#! jolts of pleasure through your whole being. \\n\\n
+                   He's in complete control of your body and mind
+                   """,
+                                 TriggeredDesc(IS_AT_LEAST_SUB_1, """
+                    and you're enjoying #sub every#! single moment of his cock #italic splitting you in half#!"""),
+                                 TriggeredDesc(IS_AT_LEAST_DOM_1, """
+                    and you #dom hate#! having to admit to yourself that he might #italic break#! you"""), "."
+                                 ),
+               options=(
+                   Option(EventsSex.MM_MISSIONARY, OptionCategory.DOM,
+                          "Roll in place",
+                          transition_text=f"""
+                              You find an opening between {THEM}'s thrusts and manage to roll in place, your body now facing his,
+                               but he quickly spreads your legs out of the way of his prick.""",
+                          failed_transition_text=f"""
+                              You try to roll in place, but {THEM}'s #bold paralyzing#! barrage of thrusts never slows enough to do so.
+                              """),
+                   Option(EventsSex.MM_STANDING_FUCKED_FROM_BEHIND, OptionCategory.DOM,
+                          "Get up",
+                          transition_text=f"""
+                              You find a moment between thrust and pull your knees under you, managing to get up, but {THEM}'s relentless assault
+                              continues as he holds your waist while entering you once more.""",
+                          failed_transition_text=f"""
+                              You try to find a moment to pull your knees under you, but each attempt is thwarted by his wild thrashing."""),
+                   Option(EventsSex.MM_PRONE_BONE, OptionCategory.SUB,
+                          "Submit to getting #bold mercilessly#! plowed",
+                          transition_text=f"""
+                              The immense warmth of {THEM} pounding you to the core makes your body melt as your mind is #sub flooded with heat#!
+                              The intents thrust leave you moaning like a cheap whore.""",
+                          ),
+                   Option(EventsCum.MM_PULL_OUT_CUM_ON_ASS, OptionCategory.DOM,
+                          "Have him pull out and cum on your ass",
+                          transition_text=f"""
+                              "D-Don't fill me!" you shakingly say as his pounding nearly drives you senseless.""",
+                          failed_transition_text=f"""
+                              "D-Don't fill me!" you shakingly say as his pounding nearly drives you senseless, but your pleas falls on deaf ears."""),
+                   Option(EventsCum.MM_CREAMPIE_BREED, OptionCategory.SUB,
+                          "Get #italic filled to the brim#!",
+                          transition_text=f"""
+                              His rod gets even harder as his relentless pounding reaches your deepest spot, #bold drowning#! your thoughts in euphoria."""
+                                          ""),
+               )))
+
+
 # TODO add chance of acquiring fetishes
 def define_cum_events(es: EventMap):
     define_cum_events_fm(es)
     define_cum_events_mf(es)
-
+    define_cum_events_mm(es)
 
 def define_first_events(es: EventMap):
     source_sex_events = get_source_sex_events(es)
@@ -3648,7 +4461,128 @@ def define_first_events(es: EventMap):
                  Smiling, you reply, "{THEM}, no need to stand on formality. Fate has ordained that we
                  meet today, it must mean that we should get to know each other more intimately."
                  Your inviting body language draws them in with no chance of escape."""))
-
+    #MM
+     es.add(First(EventsFirst.MM_MEETING_WITH_SPOUSE, "Spicing it Up",
+                 source_sex_events=source_sex_events, background="bedchamber",
+                 desc=f"""
+                 You light some candles and sprinkle some scented petals in your bedchamber,
+                 making it an even more inviting den of intimacy. As before, you left
+                 a cryptic message inviting {THEM}.
+                 \\n\\n
+                 He arrives promptly, clearly excited with your spontaneous trysts, and only
+                 gives a brief greeting before climbing into bed with you."""))
+    es.add(First(EventsFirst.MM_MEETING_WITH_SPOUSE_INITIAL, "Flowers in Bloom",
+                 source_sex_events=source_sex_events, background="garden",
+                 desc=f"""
+                 As it is beautiful day, you have a stroll in your garden. 
+                 In your bed chambers, you left a note to invite {THEM} outside.
+                 \\n\\n
+                 Upon spotting you, he rushes forward, "What is it you wanted to see me
+                 about?" Curious, and a little bit panicked with the cryptic content of your message.
+                 \\n\\n
+                 Instead of answering, you beam him your brightest smile, 
+                 "Let's make love here," pointing to a shaded awning free from prying eyes.
+                 \\n\\n
+                 Your strategy to put him on his toes and then deliver such a direct line works
+                 and he stands there, flustered at your proposal but not rejecting it.
+                 """))
+    es.add(First(EventsFirst.MM_MEETING_WITH_VASSAL, "Chains of Command",
+                 source_sex_events=source_sex_events, background="study",
+                 desc=f"""
+                 You send a summons to {THEM} about helping you with interpreting some passages in your study.
+                 By now, that's tacitly understood as an invitation to a tryst, which he gladly accepts.
+                 Almost immediately, he shows up in your study.
+                 """))
+    es.add(First(EventsFirst.MM_MEETING_WITH_VASSAL_INITIAL, "Privileges of Power",
+                 source_sex_events=source_sex_events, background="study",
+                 desc=f"""
+                 You summon {THEM} to your study, giving instructions to your 
+                 guards to let him in then leave afterwards. The guards' faces betray their guesses,
+                 but you pay them to be discrete thus they make no comments.
+                 \\n\\n
+                 Entering the study, "You summoned me, my Lady?"
+                 \\n\\n
+                 "Yes, I want to consult with you on this passage here", you say as you reach for one of the books
+                 on your bookshelf, making sure that as you do so, one of the straps on your dress would come loose
+                 and present your feminine assets. Blushing, they turn away, but you pretend as if you didn't notice 
+                 and instead walk up to him and say in a coy tone, "Could you help me with this?"
+                 """))
+    es.add(First(EventsFirst.MM_MEETING_WITH_LIEGE, "Mead in my Room?",
+                 source_sex_events=source_sex_events, background="bedchamber",
+                 desc=f"""
+                 It's another long council meeting, and {THEM}'s councillors start streaming out of the
+                 room. You, however, remain in the room and say, "My Lord, I have some more council
+                 business to discuss with you."
+                 \\n\\n
+                 Nodding, he responds, "Very good, I appreciate your enthusiasm and hard work."
+                 Taking a pause, "But it's getting late, so let us retire to my bedchambers where
+                 we can discuss it in more comfort."
+                 """))
+    es.add(First(EventsFirst.MM_MEETING_WITH_LIEGE_INITIAL, "An Intimate Discussion",
+                 source_sex_events=source_sex_events, background="council_chamber",
+                 animation_left=BOW,
+                 desc=f"""
+                 After the council meeting, {THEM} dismisses you all. However, you take your time
+                 leaving and soon you two are the only ones left in the chamber. "Is there something
+                 you need?" he asks amicably.
+                 \\n\\n
+                 Instead of answering, you twirl your hair and put an arm under your bosom, making
+                 an effort to highlight it. You saunter closer to him and see an inviting amusement in 
+                 his eyes, "You, my Lord."
+                 """))
+    es.add(First(EventsFirst.MM_MEETING_WITH_PRISONER, "Taste of Heaven in Hell",
+                 source_sex_events=source_sex_events, background="dungeon",
+                 animation_right=PRISON_HOUSE,
+                 desc=f"""
+                 You descend to {THEM}'s cell without much ceremony.
+                 \\n\\n
+                 "You've come again," he says happily. Laughing, he jests#weak (?)#! "Have you fallen
+                 for my cock?"
+                 \\n\\n
+                 That comment strikes a cord within you and you question your repeated visit to your prisoner.
+                 Initially it was meant as a torture for them, but that is only valid if you deny him the pleasure
+                 afterwards. #sub;italic Perhaps you are growing dependent on the pleasure he can provide?#!
+                 \\n\\n
+                 Pushing such thoughts to the back of your mind, you approach him."""))
+    es.add(First(EventsFirst.MM_MEETING_WITH_PRISONER_INITIAL, "The Sweetest Torture",
+                 source_sex_events=source_sex_events, background="dungeon",
+                 animation_right=PRISON_HOUSE,
+                 desc=f"""
+                 You descend down the stone stairs to your dungeon and muse that giving a prisoner
+                 pleasure might be the greatest torture after you take it away. After all, ignore is bliss,
+                 and to take away that bliss would be fitting punishment.
+                 \\n\\n
+                 It doesn't take you long before you arrive in front of {THEM}'s cell. Speaking to the guards,
+                 "I need to talk to this prisoner along; you are dismissed."
+                 \\n\\n
+                 He looks up, eyes wide in fear of what tortures you have devised that requires a personal visit.
+                 But you also notice a bulge forming in his loose trousers. Before coming, you had your makeup and
+                 perfume done in a manner bordering on garish (and some would call #sub whorish#!), the kind that
+                 instantly sparks men's loins and their desire to dominate and conquer.
+                 """))
+    es.add(First(EventsFirst.MM_MEETING_WITH_ACQUAINTANCE, "Who Owns Who",
+                 source_sex_events=source_sex_events, background="sitting_room",
+                 desc=f"""
+                 Communicating via your servants, you inform {THEM} that you'd like to get to know them better
+                 in your sitting room. Wise to your intentions, he wastes no time arriving, noting the lack of 
+                 servants and guards to confirm his guess.
+                 \\n\\n
+                 You lock eyes, and without exchanging any words do all the communication with your bodies."""))
+    es.add(First(EventsFirst.MM_MEETING_WITH_ACQUAINTANCE_INITIAL, "A Chance Encounter",
+                 source_sex_events=source_sex_events, background="courtyard",
+                 desc=f"""
+                 Your servants inform you that {THEM} is strolling along your courtyard. You give further instructions
+                 to clear out the guards and any other personage near that location. A knowing gleam appears in their
+                 eyes, but they are paid for their discretion and so bow and leave without any comment.
+                 \\n\\n
+                 You find him in the expected location, and feigning like you were strolling as well, you don't
+                 go towards him.
+                 \\n\\n
+                 "Well met, {ME_FULL_REGNAL}!" He greets you enthusiastically.
+                 \\n\\n
+                 Smiling, you reply, "{THEM}, no need to stand on formality. Fate has ordained that we
+                 meet today, it must mean that we should get to know each other more intimately."
+                 Your painted lips and inviting body language draws them in with no chance of escape."""))
 
 def main():
     parser = argparse.ArgumentParser(
